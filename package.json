@@ -1,0 +1,27 @@
+{
+  "name": "javascript-datastructures",
+  "version": "0.0.1",
+  "description": "使用JavaScript创建常用数据结构",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.1.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "'algorithms'",
+    "data-structures",
+    "javascript",
+    "algorithm",
+    "javascript-algorithms",
+    "javascript-datastructures",
+    "sorting-algorithms",
+    "graph",
+    "tree"
+  ],
+  "author": "weiqinl (https://github.com/weiqinl)",
+  "license": "MIT"
+}
