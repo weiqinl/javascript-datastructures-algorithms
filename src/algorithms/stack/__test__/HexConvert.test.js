@@ -9,6 +9,10 @@ describe('less hex convert', () => {
     expect(hexConvert(100, 16)).toBe('64') // 100 6 0
     expect(hexConvert(1000, 16)).toBe('3E8') // 100 62 3 0
 
+    expect(hexConvert(1000, 20)).toEqual('只转换大于二进制小于十六进制之间的进制') // 100 62 3 0
+    expect(hexConvert(1000, 1)).toBe('只转换大于二进制小于十六进制之间的进制') // 100 62 3 0
+
+
     // 100 / 2 == 50 rem = 0
     // 50 / 2 == 25 rem = 0
     // 25 / 2 == 12 rem = 1

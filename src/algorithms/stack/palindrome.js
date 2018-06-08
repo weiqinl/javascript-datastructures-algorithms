@@ -9,16 +9,21 @@ export default function palindrome(str) {
     return false
   }
 
+  if ((str === null) ||
+    (str === undefined) ||
+    (str !== null && str.length === 0)) {
+    return false
+  }
   let stack = new Stack()
-  let oStr = str;
-  let nStr = '';
+  let oStr = str.toLocaleLowerCase()
+  let nStr = ''
 
   for (let i = 0; i < str.length; i++) {
     stack.push(str[i])
   }
 
   while (!stack.isEmpty()) {
-    nStr += stack.pop().toString()
+    nStr += stack.pop().toLocaleLowerCase()
   }
 
   if (nStr === oStr) {

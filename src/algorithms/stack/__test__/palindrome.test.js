@@ -7,6 +7,7 @@ describe('judge palindrome', () => {
     expect(palindrome('12321')).toBeTruthy()
     expect(palindrome('ab，ba')).toBeTruthy()
 
+    expect(palindrome('aB，ba')).toBeTruthy()
 
     expect(palindrome(' 中国 国中 ')).toBeTruthy()
     expect(palindrome('abcd')).toBeFalsy()
@@ -17,8 +18,7 @@ describe('judge palindrome', () => {
     expect(palindrome(null)).toBeFalsy()
     expect(palindrome(undefined)).toBeFalsy()
     expect(palindrome()).toBeFalsy()
-    
-    expect(palindrome('')).toBeTruthy()
+    expect(palindrome('')).toBeFalsy()
   })
 
   it('judge palindrome not string', () => {

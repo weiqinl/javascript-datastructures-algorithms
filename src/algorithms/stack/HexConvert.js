@@ -11,6 +11,11 @@ export default function hexConverter(decNumber, hex) {
   let baseString = ''
   let digits = '0123456789ABCDEF' //进制取数
 
+
+  if (hex < 2 || hex > 16) {
+    return '只转换大于二进制小于十六进制之间的进制'
+  }
+
   while (decNumber > 0) {
     rem = Math.floor(decNumber % hex)
     remStack.push(rem)
