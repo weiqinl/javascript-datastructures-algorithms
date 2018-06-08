@@ -1,4 +1,4 @@
-import hexConvert from '../HexConvert'
+import hexConvert from '../hexConvert'
 
 describe('less hex convert', () => {
   it('hex convert', () => {
