@@ -1,7 +1,6 @@
 /**
- * 用ES6语法声明Stack类
- * 使用es6中的`Class`来编写类：栈
- * 此栈使用数组来定义
+ * 使用es6中的Class语法来编写类：栈
+ * 使用数组来保存栈中的元素
  */
 export default class Stack {
   constructor() {
