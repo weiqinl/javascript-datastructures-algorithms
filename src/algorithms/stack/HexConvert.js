@@ -18,7 +18,7 @@ export default function hexConverter(decNumber, hex) {
   }
 
   while (!remStack.isEmpty()) {
-    baseString += digits[remStack.pop()] // 将栈中的数据取出
+    baseString += digits[remStack.pop()] // 取出栈中的数据对应于进制数的表示数
   }
 
   return baseString

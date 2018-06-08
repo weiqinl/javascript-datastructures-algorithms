@@ -7,6 +7,7 @@ describe('less hex convert', () => {
     expect(hexConvert(100, 8)).toBe('144') // 100 12 1 0
     expect(hexConvert(100, 10)).toBe('100') // 100 10 1 0
     expect(hexConvert(100, 16)).toBe('64') // 100 6 0
+    expect(hexConvert(1000, 16)).toBe('3E8') // 100 62 3 0
 
     // 100 / 2 == 50 rem = 0
     // 50 / 2 == 25 rem = 0
@@ -28,6 +29,10 @@ describe('less hex convert', () => {
 
     // 100 / 16 == 6 rem = 4
     // 6 / 16 == 0 rem = 6
+
+    // 1000 / 16 == 62 rem = 8
+    // 62 / 16 == 3 rem = 14  //对应于16进制中的E
+    // 3 / 16 == 0 rem = 3
 
   })
 })
