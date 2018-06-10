@@ -1,7 +1,34 @@
 import palindrome from '../palindrome'
 
 describe('judge palindrome', () => {
+
+  it('not string type', () => {
+    let a
+    expect(palindrome(a)).toBeFalsy() // undefined
+    expect(palindrome()).toBeFalsy() // undefined
+
+    let b = null
+    expect(palindrome(b)).toBeFalsy() // null
+
+
+    expect(palindrome(12321)).toBeFalsy()
+    expect(palindrome(123521)).toBeFalsy()
+
+    let obj = {
+      a: 'b',
+      b: 'a',
+    }
+    expect(palindrome(obj)).toBeFalsy()
+    
+    let s = Symbol('abba')
+    expect(palindrome(s)).toBeFalsy()
+
+  })
+
   it('judge palindrome', () => {
+
+    expect(palindrome('')).toBeFalsy() // 空字符串
+
     expect(palindrome('abcba')).toBeTruthy()
     expect(palindrome(' a b b a ')).toBeTruthy()
     expect(palindrome('12321')).toBeTruthy()
@@ -12,21 +39,6 @@ describe('judge palindrome', () => {
     expect(palindrome(' 中国 国中 ')).toBeTruthy()
     expect(palindrome('abcd')).toBeFalsy()
     expect(palindrome('12312')).toBeFalsy()
-  })
-
-  it('judge palindrome for null/undefined/""', () => {
-    expect(palindrome(null)).toBeFalsy()
-    expect(palindrome(undefined)).toBeFalsy()
-    expect(palindrome()).toBeFalsy()
-    expect(palindrome('')).toBeFalsy()
-  })
-
-  it('judge palindrome not string', () => {
-    let obj = {
-      a: 'b',
-      b: 'a',
-    }
-    expect(palindrome(obj)).toBeFalsy()
 
   })
 })

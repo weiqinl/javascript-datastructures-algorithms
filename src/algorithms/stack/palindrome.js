@@ -5,15 +5,11 @@ import Stack from '../../data-structures/stack/stack-array'
  * @param {String} str 要判断的字符串
  */
 export default function palindrome(str) {
-  if (typeof (str) !== 'string') {
+  // 非string类型的 或者  空字符串  直接判断不是回文
+  if (typeof (str) !== 'string' || str.length === 0) {
     return false
   }
 
-  if ((str === null) ||
-    (str === undefined) ||
-    (str !== null && str.length === 0)) {
-    return false
-  }
   let stack = new Stack()
   let oStr = str.toLocaleLowerCase()
   let nStr = ''
