@@ -29,17 +29,17 @@ export function hanoi(number) {
 
 /**
  * 记录每一次圆盘移动之后，各个柱子上的圆盘排放顺序，完成汉诺塔。
- * 
+ *
  * 这里的思路，一直在循环做一件事情。
- * 把原始柱子上的圆盘分为两部分。最大和其它。
- * 第一回合，将其它移动到辅助柱子上，将最大的移动到目标柱子上，再将其它移动到目标柱子上去
- * 第二回合，将其它移动到辅助柱子上去，将最大的移动到目标柱子上，再将其它移动到目标柱子上去
+ * 把原始柱子上的圆盘分为两部分，最大和其它。
+ * 第一回合，将其它移动到辅助柱子上，将最大的移动到目标柱子上，再将其它移动到目标柱子上
+ * 第二回合，将其它移动到辅助柱子上，将最大的移动到目标柱子上，再将其它移动到目标柱子上
  * ...
- * 第2 ** n - 1回合，将其它移动到辅助柱子上去，将最大的移动到目标柱子上，再将其它移动到目标柱子上去
- * 
+ * 第2 ** n - 1回合，将其它移动到辅助柱子上，将最大的移动到目标柱子上，再将其它移动到目标柱子上
+ *
  * 但是，这里源柱子、辅助柱子和目标柱子会随着其它盘而变动。
  * 其它盘在哪个柱子上，哪根柱子就是源柱子。
- * 
+ *
  * @param {Int32Array} plates 圆盘个数
  * @param {Array} source 源柱子
  * @param {Array} helper 辅助柱子
@@ -62,9 +62,8 @@ function towerOfHanoi(
 ) {
   if (plates <= 0) {
     return moves
-  }
-
-  if (plates === 1) { // 只有一个圆盘的情况
+  } else if (plates === 1) {
+    // 只有一个圆盘的情况
     dest.push(source.pop())
     const move = {}
     move[sourceName] = source.toString()
@@ -73,8 +72,18 @@ function towerOfHanoi(
     moves.push(move)
   } else {
     // 先将其他盘移动到辅助柱子上
-    towerOfHanoi(plates - 1, source, dest, helper, sourceName, destName, helperName, num, moves)
-    // 源柱子上剩下最大的圆盘，将其压入目标柱子
+    towerOfHanoi(
+      plates - 1,
+      source,
+      dest,
+      helper,
+      sourceName,
+      destName,
+      helperName,
+      num,
+      moves
+    )
+    // 弹出源柱子上剩下的最大圆盘，并将其压入目标柱子
     dest.push(source.pop())
     const move = {}
     move[sourceName] = source.toString()
@@ -82,13 +91,24 @@ function towerOfHanoi(
     move[destName] = dest.toString()
     moves.push(move)
     // 再将其他盘中移动到目标柱子上去
-    towerOfHanoi(plates - 1, helper, source, dest, helperName, sourceName, destName, num, moves)
+    towerOfHanoi(
+      plates - 1,
+      helper,
+      source,
+      dest,
+      helperName,
+      sourceName,
+      destName,
+      num,
+      moves
+    )
   }
   return moves
 }
 
 /**
  * 汉诺塔
+ * 记录每一次圆盘移动之后，各个柱子上的圆盘排放顺序，完成汉诺塔。
  * @param {Int32Array} plates 圆盘的个数
  * @param {String} towerA 源柱子的名称
  * @param {String} towerB 辅助柱子的名称
@@ -104,14 +124,4 @@ export function hanoiStack(plates, towerA, towerB, towerC) {
   }
 
   return towerOfHanoi(plates, source, helper, dest, towerA, towerB, towerC)
-}
-/**
- * 汉诺塔
- * @param {Int32Array} plates 圆盘的个数
- * @param {String} towerA 源柱子的名称
- * @param {String} towerB 辅助柱子的名称
- * @param {String} towerC 目标柱子的名称
- */
-export function hanoiStackArray(plates, towerA, towerB, towerC) {
-
 }
