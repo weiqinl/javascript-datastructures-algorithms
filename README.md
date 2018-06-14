@@ -1,7 +1,28 @@
 # javascript 数据结构与算法
 
+## 如何使用本库
+
+git clone & cd javascript-datastructures
+npm install
+npm test
+
+## 目录结构
+
+src
+  algorithms(算法应用)
+  data-structures(数据结构)
+    __test__ 测试用例
+
+
 ## 数据结构
-stack
+
+1. 栈-stack
+2. 队列-queue
+
 
 ## 测试
-使用jest
+本项目，使用jest来进行单元测试。
+
+
+## 参考
+学习JavaScript数据结构与算法【Loiane Groner 著】
