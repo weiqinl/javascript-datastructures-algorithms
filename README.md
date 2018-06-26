@@ -2,9 +2,11 @@
 
 ## 如何使用本库
 
+```
 git clone git@github.com:weiqinl/javascript-datastructures-algorithms.git & cd javascript-datastructures  
 npm install  
 npm test  
+```
 
 ## 目录结构
 
