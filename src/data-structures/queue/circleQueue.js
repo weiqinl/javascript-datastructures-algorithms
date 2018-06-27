@@ -14,15 +14,16 @@ export default class CircleQueue {
 
     let eliminated = '';
     while (queue.size() > 1) {
+      // 此过程将队列变成循环队列
       for (let i = 0; i < num; i++) {
         queue.enqueue(queue.dequeue());
       }
       eliminated = queue.dequeue();
-      console.log(eliminated + '在击鼓传花游戏中被淘汰')
+      // console.log(eliminated + '在击鼓传花游戏中被淘汰')
     }
 
     return queue.dequeue()
-    
+
   }
 
 }

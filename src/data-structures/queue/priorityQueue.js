@@ -30,9 +30,12 @@ export default class PriorityQueue {
     }
   }
 
+  /**
+   * 打印队列中的元素
+   */
   print() {
     for (let i = 0; i < this.items.length; i++) {
-      console.log(`${this.items[i].element} - ${this.items[i].priority}`)
+      console.log(`${i + 1} - ${this.items[i].element} - ${this.items[i].priority}`)
     }
   }
 

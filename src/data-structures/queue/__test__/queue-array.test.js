@@ -103,4 +103,20 @@ describe('queue-array ', () => {
 
     expect(queue.toString()).toBe('liu,wei,qin')
   })
+
+  it('dequeue enqueue priority', () => {
+    expect(queue.size()).toBe(0)
+
+    queue.enqueue('liu')
+    queue.enqueue('wei')
+    queue.enqueue('qin')
+
+    expect(queue.size()).toBe(3)
+    
+    queue.enqueue(queue.dequeue())
+    
+    expect(queue.size()).toBe(3)
+    expect(queue.toString()).toBe('wei,qin,liu')
+
+  })
 })
