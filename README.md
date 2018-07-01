@@ -1,5 +1,6 @@
 # javascript 数据结构与算法
 
+欢迎查看博客园：[weiqinl.com](http://www.cnblogs.com/weiqinl/)
 ## 如何使用本库
 
 ```
@@ -19,8 +20,9 @@ src
 
 ## 数据结构
 
-1. 栈-stack
-2. 队列-queue
+1. [栈-stack](https://github.com/weiqinl/javascript-datastructures-algorithms/tree/master/src/data-structures/stack)
+2. [队列-queue](https://github.com/weiqinl/javascript-datastructures-algorithms/tree/master/src/data-structures/queue)
+3. [链表-linkedlist](https://github.com/weiqinl/javascript-datastructures-algorithms/tree/master/src/data-structures/linkedlist)
 
 
 ## 测试
