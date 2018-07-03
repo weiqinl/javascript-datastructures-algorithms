@@ -9,7 +9,7 @@ export class Node {
 }
 
 export class DoublyNode extends Node {
-  constructor(element, next, prev) {
+  constructor(element, next = null, prev = null) {
     super(element, next)
     this.prev = prev
   }
