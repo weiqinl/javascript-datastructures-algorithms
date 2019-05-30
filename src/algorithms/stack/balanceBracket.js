@@ -35,6 +35,7 @@ export default function balanceBracket(brackets) {
       }
     }
   }
+  if (!stack.isEmpty()) return false  // 可能出现这样的情况  [[[() 
 
   return `是平衡括号序列。有${num}对括号`
 }
